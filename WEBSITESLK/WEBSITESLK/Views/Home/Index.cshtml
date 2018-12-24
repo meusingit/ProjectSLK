@@ -1,8 +1,14 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-<h2>Index</h2>
+<h2>Home Page</h2>
+<br />
+<hr />
 Welcome @HttpContext.Current.User.Identity.Name
+
+<div>@Html.ActionLink("Click Here ", "Create", "Carinfo1")to Fill the form.</div>
+<br />
+<hr />
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("Logout", "Table", FormMethod.Post, new { id = "logoutForm" }))

@@ -136,12 +136,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CarInfo1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TableController.cs" />
     <Compile Include="Crypto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Car.cs" />
+    <Compile Include="Models\CarInfo1.cs" />
     <Compile Include="Models\Extended\Table.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -174,6 +177,11 @@
     <Content Include="Views\Table\VerifyAccount.cshtml" />
     <Content Include="Views\Table\Login.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\CarInfo1\Create.cshtml" />
+    <Content Include="Views\CarInfo1\Delete.cshtml" />
+    <Content Include="Views\CarInfo1\Details.cshtml" />
+    <Content Include="Views\CarInfo1\Edit.cshtml" />
+    <Content Include="Views\CarInfo1\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
