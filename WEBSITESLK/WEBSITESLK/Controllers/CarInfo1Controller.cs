@@ -13,13 +13,11 @@ namespace WEBSITESLK.Controllers
     public class CarInfo1Controller : Controller
     {
         private Car db = new Car();
-
         // GET: CarInfo1
         public ActionResult Index()
         {
             return View(db.CarInfo1.ToList());
         }
-
         // GET: CarInfo1/Details/5
         public ActionResult Details(string id)
         {
