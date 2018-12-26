@@ -1,11 +1,11 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-<h2>Home Page</h2>
+<h2 align="center">Home Page</h2 align="center">
 <br />
 <hr />
-Welcome @HttpContext.Current.User.Identity.Name
+<div align="center">Welcome @HttpContext.Current.User.Identity.Name</div>
 
-<div>@Html.ActionLink("Click Here ", "Create", "Carinfo1")to Fill the form.</div>
+<div align="center">@Html.ActionLink("Click Here ", "Create", "Carinfo1")to Fill the form.</div>
 <br />
 <hr />

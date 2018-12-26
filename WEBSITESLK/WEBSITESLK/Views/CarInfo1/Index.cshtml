@@ -4,7 +4,6 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -46,12 +45,16 @@
         <td>
             @Html.DisplayFor(modelItem => item.Owner)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.VIN }) |
-            @Html.ActionLink("Details", "Details", new { id=item.VIN }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.VIN })
-        </td>
-    </tr>
+        <td>@Html.ActionLink("Details", "Details", new { id = item.VIN }, new { style = "color:aqua" })</td>
+        @if (User.Identity.IsAuthenticated)
+        {
+            if (HttpContext.Current.User.Identity.Name == "meusingit@gmail.com")
+            {<td>@Html.ActionLink("Edit", "Edit", new { id = item.VIN }, new { style = "color:aqua" })</td> 
+<td>@Html.ActionLink("Delete", "Delete", new { id = item.VIN }, new { style = "color:aqua" })
+</td>
+ }
+        }
+</tr>
 
 }
    

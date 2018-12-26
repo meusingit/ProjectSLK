@@ -170,7 +170,7 @@ namespace WEBSITESLK.Controllers
             var verifyUrl = "/Table/VerifyAccount/" + activationCode;
             var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
 
-            var fromEmail = new MailAddress("meusingit@gmail.com", "MEUsingIt");
+            var fromEmail = new MailAddress("meusingit@gmail.com", "Car Seller Project SLK");
             var toEmail = new MailAddress(emailID);
             var fromEmailPassword = "9008659029##manoj#15327242500100647701"; //becareful, youre selling pw.
             string subject = "Your account is successfully created!";

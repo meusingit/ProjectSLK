@@ -1883,7 +1883,6 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     e.preventDefault()
     $(this).tab('show')
   })
-
 }(window.jQuery);
 
 /* ========================================================================
