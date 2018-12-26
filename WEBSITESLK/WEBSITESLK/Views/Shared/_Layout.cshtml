@@ -31,12 +31,22 @@
         @RenderBody()
         <hr />
         <footer>
+            @if (Request.IsAuthenticated)
+            {
+                using (Html.BeginForm("Logout", "Table", FormMethod.Post, new { id = "logoutForm" }))
+                {
+                    <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+                }
+            }
+
             <p>&copy; @DateTime.Now.Year - Carseller</p>
+
         </footer>
     </div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     @RenderSection("Scripts",false)
+
 </body>
 </html>

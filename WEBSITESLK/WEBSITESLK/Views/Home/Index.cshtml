@@ -9,10 +9,3 @@ Welcome @HttpContext.Current.User.Identity.Name
 <div>@Html.ActionLink("Click Here ", "Create", "Carinfo1")to Fill the form.</div>
 <br />
 <hr />
-@if (Request.IsAuthenticated)
-{
-    using (Html.BeginForm("Logout", "Table", FormMethod.Post, new { id = "logoutForm" }))
-    {
-        <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
-    }
-}

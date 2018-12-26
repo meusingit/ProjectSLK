@@ -188,7 +188,6 @@ namespace WEBSITESLK.Controllers
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential(fromEmail.Address, fromEmailPassword)
             };
-
             using (var message = new MailMessage(fromEmail, toEmail)
             {
                 Subject = subject,
@@ -197,6 +196,5 @@ namespace WEBSITESLK.Controllers
             })
                 smtp.Send(message);
         }
-
     }
 }
