@@ -214,6 +214,7 @@
     <Content Include="Views\CarInfo1\Edit.cshtml" />
     <Content Include="Views\CarInfo1\Index.cshtml" />
     <Content Include="Views\Images\AddVehicleImage.cshtml" />
+    <Content Include="Views\Images\success.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

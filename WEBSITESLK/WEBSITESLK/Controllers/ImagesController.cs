@@ -29,6 +29,10 @@ namespace WEBSITESLK.Controllers
                 ModelState.Clear();
                 newimageupload.ImagesBlobFileInput(filename, path);           
             }
+            return RedirectToAction("success");
+        }
+        public ActionResult success()
+        {
             return View();
         }
     }
