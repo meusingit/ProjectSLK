@@ -95,6 +95,7 @@ namespace WEBSITESLK.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             CarInfo1 carInfo1 = db.CarInfo1.Find(id);
+         
             if (carInfo1 == null)
             {
                 return HttpNotFound();
