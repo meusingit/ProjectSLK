@@ -21,10 +21,10 @@ namespace WEBSITESLK.Models
         [Required]
         public int? Price { get; set; }
         [Required]
-        [StringLength(20)]
+        [StringLength(50)]
         public string StoreLoc { get; set; }
         [Required]
-        [StringLength(20)]
+        [StringLength(50)]
         public string Owner { get; set; }
     }
 }

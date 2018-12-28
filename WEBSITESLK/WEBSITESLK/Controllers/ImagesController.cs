@@ -21,17 +21,24 @@ namespace WEBSITESLK.Controllers
         public ActionResult AddVehicleImage(image ige, HttpPostedFileBase imgf)
         {
             if (imgf != null)
-            {          
-                string filename = Path.GetFileName(imgf.FileName) ;
+            {  
+                string filename =  HttpContext.User.Identity.Name.ToString()+ Path.GetExtension(imgf.FileName) ;
                 string path = Path.Combine(Server.MapPath("~/Images/"), filename.ToString());
                 imgf.SaveAs(path.ToString());
                 Pics newimageupload = new Pics();
                 ModelState.Clear();
-                newimageupload.ImagesBlobFileInput(filename, path);           
+                newimageupload.ImagesBlobFileInput(filename, path);
+               
             }
             return RedirectToAction("success");
         }
+
         public ActionResult success()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Pics(string VIN)
         {
             return View();
         }

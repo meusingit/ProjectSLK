@@ -10,8 +10,7 @@ namespace WEBSITESLK
     //metho to call images from blob.
     {
         public void ImagesBlobFileInput(string inputFileName, string inputFilepath )
-        {
-            
+        { 
             var storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnection"));
             var myClient = storageAccount.CreateCloudBlobClient();
             var container = myClient.GetContainerReference("images-backup");
@@ -25,7 +24,6 @@ namespace WEBSITESLK
         }
         public void ImagesBlobFileOutput(string outputFileName, string outputFilePath)
         {
-
             var storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnection"));
             var myClient = storageAccount.CreateCloudBlobClient();
             var container = myClient.GetContainerReference("WEBSITESLK");
