@@ -26,5 +26,7 @@ namespace WEBSITESLK.Models
         [Required]
         [StringLength(50)]
         public string Owner { get; set; }
+        [Required]
+        public bool isimgup { get; set; }
     }
 }

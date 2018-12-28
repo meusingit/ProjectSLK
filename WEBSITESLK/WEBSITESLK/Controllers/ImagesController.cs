@@ -5,32 +5,42 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.WebPages;
+using WEBSITESLK.Models;
 
 namespace WEBSITESLK.Controllers
 {
     public class ImagesController : Controller
     {
-        [Authorize]
+        private Car db = new Car();
+      
+           [Authorize]
         // GET: Images
         [HttpGet]
-        public ActionResult AddVehicleImage()
+        public ActionResult AddVehicleImage(string id)
         {
-            return View();
+            CarInfo1 imgstatus = db.CarInfo1.Find(id);
+         
+            return View(imgstatus);
         }
         [HttpPost]
-        public ActionResult AddVehicleImage(image ige, HttpPostedFileBase imgf)
+        public ActionResult AddVehicleImage(string id,image ige, HttpPostedFileBase imgf)
         {
             if (imgf != null)
-            {  
-                string filename =  HttpContext.User.Identity.Name.ToString()+ Path.GetExtension(imgf.FileName) ;
+            {
+                CarInfo1 cimg = new CarInfo1();
+                cimg.isimgup = true;
+                string filename = id+Path.GetExtension(imgf.FileName) ;
                 string path = Path.Combine(Server.MapPath("~/Images/"), filename.ToString());
                 imgf.SaveAs(path.ToString());
                 Pics newimageupload = new Pics();
                 ModelState.Clear();
                 newimageupload.ImagesBlobFileInput(filename, path);
+
+                db.SaveChanges();
                
             }
             return RedirectToAction("success");
+     
         }
 
         public ActionResult success()

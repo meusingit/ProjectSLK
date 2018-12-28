@@ -124,8 +124,16 @@ else
             <td>
                 @Html.DisplayFor(modelItem => item.Owner)
             </td>
+             <td>
+                 @if (item.isimgup == false)
+                 {
+              
+                     @Html.ActionLink("Click here to upload image", "AddVehicleImage", "Images", new { id = item.VIN },null)
 
-            <td>@Html.ActionLink("Details", "Details", new { id = item.VIN }, new { style = "color:aqua" })</td>
+                 }
+             </td>
+<td>@Html.ActionLink("Details", "Details", new { id = item.VIN }, new { style = "color:aqua" })</td>
+          
             @if (User.Identity.IsAuthenticated)
             {
                 if (HttpContext.Current.User.Identity.Name.ToLower() == "meusingit@gmail.com")

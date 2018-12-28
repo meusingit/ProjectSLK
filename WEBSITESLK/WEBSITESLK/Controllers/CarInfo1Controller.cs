@@ -50,12 +50,10 @@ namespace WEBSITESLK.Controllers
         {
             if (ModelState.IsValid)
             {
-       
                 db.CarInfo1.Add(carInfo1);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(carInfo1);
         }
 
@@ -73,7 +71,6 @@ namespace WEBSITESLK.Controllers
             }
             return View(carInfo1);
         }
-
         // POST: CarInfo1/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
