@@ -35,8 +35,6 @@ namespace WEBSITESLK.Controllers
                 Pics newimageupload = new Pics();
                 ModelState.Clear();
                 newimageupload.ImagesBlobFileInput(filename, path);
-
-                db.SaveChanges();
                
             }
             return RedirectToAction("success");
@@ -44,11 +42,6 @@ namespace WEBSITESLK.Controllers
         }
 
         public ActionResult success()
-        {
-            return View();
-        }
-        [HttpGet]
-        public ActionResult Pics(string VIN)
         {
             return View();
         }
