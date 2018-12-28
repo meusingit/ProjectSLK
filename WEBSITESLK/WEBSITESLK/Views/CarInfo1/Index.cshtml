@@ -27,9 +27,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.StoreLoc)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Owner)
-            </th>
+         
             <th></th>
         </tr>
 
@@ -53,17 +51,21 @@
             <td>
                 @Html.DisplayFor(modelItem => item.StoreLoc)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Owner)
-            </td>
+          
         
                 <td>
                     @if (item.isimgup == false)
                     {
-
                         @Html.ActionLink("Click here to upload image", "AddVehicleImage", "Images", new { id = item.VIN }, null)
 
                     }
+                    else
+                    {
+
+                            <img src="..\..\Images\+@item.VIN.ToString()+.jpeg" alt="problem!!!" width="50" height="50" />
+
+                    }
+
                 </td>
             <td>@Html.ActionLink("Details", "Details", new { id = item.VIN }, new { style = "color:aqua" })</td>
             @if (User.Identity.IsAuthenticated)

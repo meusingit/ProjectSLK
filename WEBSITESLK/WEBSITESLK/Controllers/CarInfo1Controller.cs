@@ -16,6 +16,7 @@ namespace WEBSITESLK.Controllers
         // GET: CarInfo1
         public ActionResult Index()
         {
+
             return View(db.CarInfo1.ToList());
         }
         // GET: CarInfo1/Details/5
@@ -46,7 +47,7 @@ namespace WEBSITESLK.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "VIN,Brand,Model,Price,StoreLoc,Owner")] CarInfo1 carInfo1)
+        public ActionResult Create([Bind(Include = "VIN,Brand,Model,Price,StoreLoc,Owner,isimgup")] CarInfo1 carInfo1)
         {
             if (ModelState.IsValid)
             {

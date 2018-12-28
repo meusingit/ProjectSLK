@@ -23,8 +23,10 @@
                     {  <h2 style="color:wheat">Welcome Admin!</h2>
                     @Html.ActionLink("All vehicle details", "Index", "CarInfo1")}
                     else
-                    {<h3 style="color:wheat">Welcome @HttpContext.Current.User.Identity.Name</h3> }
+                    {<h3 style="color:wheat">Welcome @HttpContext.Current.User.Identity.Name</h3>
+                   <hr /> @Html.ActionLink("Vehicle Details", "Index", "CarInfo1")}
                 }
+               
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -56,3 +58,4 @@
 
 </body>
 </html>
+

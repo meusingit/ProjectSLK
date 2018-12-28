@@ -71,9 +71,11 @@ namespace WEBSITESLK.Controllers
                 var v = dc.Tables.Where(a => a.ActivationCode == new Guid(id)).FirstOrDefault();
                 if (v != null)
                 {
+
                     v.IsEmailVerified = true;
                     dc.SaveChanges();
                     Status = true;
+
                 }
                 else
                 {

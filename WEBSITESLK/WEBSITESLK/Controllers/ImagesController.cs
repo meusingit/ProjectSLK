@@ -27,20 +27,28 @@ namespace WEBSITESLK.Controllers
         {
             if (imgf != null)
             {
-                CarInfo1 cimg = new CarInfo1();
-                cimg.isimgup = true;
+
+                using (Car img = new Car())
+                {
+                    CarInfo1 cimg = new CarInfo1();
+                    var v = img.CarInfo1.Find(id);
+                    if (v != null)
+                    {
+                        v.isimgup = true;
+                        img.SaveChanges();
+                    }
+                }
+
                 string filename = id+Path.GetExtension(imgf.FileName) ;
                 string path = Path.Combine(Server.MapPath("~/Images/"), filename.ToString());
                 imgf.SaveAs(path.ToString());
                 Pics newimageupload = new Pics();
                 ModelState.Clear();
                 newimageupload.ImagesBlobFileInput(filename, path);
-               
+
             }
             return RedirectToAction("success");
-     
         }
-
         public ActionResult success()
         {
             return View();

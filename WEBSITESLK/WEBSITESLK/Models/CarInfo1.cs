@@ -5,6 +5,7 @@ namespace WEBSITESLK.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    
 
     public partial class CarInfo1
     {
