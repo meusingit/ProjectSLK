@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<WEBSITESLK.Models.CarInfo1>
-
+@{var format =".jpg";}
 @{
     ViewBag.Title = "Index";
    
@@ -62,7 +62,7 @@
                     else
                     {
 
-                            <img src="..\..\Images\+@item.VIN.ToString()+.jpeg" alt="problem!!!" width="50" height="50" />
+                            <img src="..\..\Images\@item.VIN.ToString()@format" alt="problem!!!" width="50" height="50" />
 
                     }
 
@@ -137,8 +137,13 @@ else
              <td>
                  @if (item.isimgup == false)
                  {
-              
-                     @Html.ActionLink("Click here to upload image", "AddVehicleImage", "Images", new { id = item.VIN },null)
+
+                     @Html.ActionLink("Click here to upload image", "AddVehicleImage", "Images", new { id = item.VIN }, null)
+
+                 }
+                 else
+                 {
+                    <img src="..\..\Images\@item.VIN.ToString()@format" alt="problem!!!" width="50" height="50" />
 
                  }
              </td>
