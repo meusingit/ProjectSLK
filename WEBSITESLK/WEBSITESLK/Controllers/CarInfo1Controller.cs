@@ -28,6 +28,7 @@ namespace WEBSITESLK.Controllers
             CarInfo1 carInfo1 = db.CarInfo1.Find(id);
             if (carInfo1 == null)
             {
+               
                 return HttpNotFound();
             }
             return View(carInfo1);
@@ -36,6 +37,7 @@ namespace WEBSITESLK.Controllers
         // GET: CarInfo1/Create
         public ActionResult Create()
         {
+            
             return View();
         }
 
@@ -48,6 +50,7 @@ namespace WEBSITESLK.Controllers
         {
             if (ModelState.IsValid)
             {
+       
                 db.CarInfo1.Add(carInfo1);
                 db.SaveChanges();
                 return RedirectToAction("Index");

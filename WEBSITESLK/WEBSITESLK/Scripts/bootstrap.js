@@ -614,7 +614,12 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     var complete = function () {
       this.transitioning = 0
       this.$element
-        .trigger('hidden.bs.collapse')
+        .trigger('
+
+
+
+
+.bs.collapse')
         .removeClass('collapsing')
         .addClass('collapse')
     }

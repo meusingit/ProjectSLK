@@ -11,7 +11,8 @@
 .ui-spinner {
 	position: relative;
 	display: inline-block;
-	overflow: hidden;
+	overflow: 
+        ;
 	padding: 0;
 	vertical-align: middle;
 }
