@@ -27,7 +27,8 @@ namespace WEBSITESLK.Controllers
                 imgf.SaveAs(path.ToString());
                 Pics newimageupload = new Pics();
                 ModelState.Clear();
-                newimageupload.ImagesBlobFileInput(filename, path);           
+                newimageupload.ImagesBlobFileInput(filename, path);
+                
             }
             return RedirectToAction("success");
         }
@@ -35,5 +36,12 @@ namespace WEBSITESLK.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public ActionResult show()
+        {
+            image imageModel = new image();
+            return show();
+        }
+
     }
 }
