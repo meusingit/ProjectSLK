@@ -5,6 +5,7 @@ namespace WEBSITESLK.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    
 
     public partial class CarInfo1
     {
@@ -21,10 +22,12 @@ namespace WEBSITESLK.Models
         [Required]
         public int? Price { get; set; }
         [Required]
-        [StringLength(20)]
+        [StringLength(50)]
         public string StoreLoc { get; set; }
         [Required]
-        [StringLength(20)]
+        [StringLength(50)]
         public string Owner { get; set; }
+        [Required]
+        public bool isimgup { get; set; }
     }
 }

@@ -16,6 +16,7 @@ namespace WEBSITESLK.Controllers
         // GET: CarInfo1
         public ActionResult Index()
         {
+
             return View(db.CarInfo1.ToList());
         }
         // GET: CarInfo1/Details/5
@@ -28,6 +29,7 @@ namespace WEBSITESLK.Controllers
             CarInfo1 carInfo1 = db.CarInfo1.Find(id);
             if (carInfo1 == null)
             {
+               
                 return HttpNotFound();
             }
             return View(carInfo1);
@@ -36,6 +38,7 @@ namespace WEBSITESLK.Controllers
         // GET: CarInfo1/Create
         public ActionResult Create()
         {
+            
             return View();
         }
 
@@ -44,7 +47,7 @@ namespace WEBSITESLK.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "VIN,Brand,Model,Price,StoreLoc,Owner")] CarInfo1 carInfo1)
+        public ActionResult Create([Bind(Include = "VIN,Brand,Model,Price,StoreLoc,Owner,isimgup")] CarInfo1 carInfo1)
         {
             if (ModelState.IsValid)
             {
@@ -52,7 +55,6 @@ namespace WEBSITESLK.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(carInfo1);
         }
 
@@ -70,7 +72,6 @@ namespace WEBSITESLK.Controllers
             }
             return View(carInfo1);
         }
-
         // POST: CarInfo1/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -95,6 +96,7 @@ namespace WEBSITESLK.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             CarInfo1 carInfo1 = db.CarInfo1.Find(id);
+         
             if (carInfo1 == null)
             {
                 return HttpNotFound();

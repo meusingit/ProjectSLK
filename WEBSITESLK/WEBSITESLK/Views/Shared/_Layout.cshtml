@@ -10,7 +10,7 @@
 
 </head>
 <body align="center" >
-    <div align="center" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                     <span class="icon-bar"></span>
@@ -19,9 +19,14 @@
                 <h1 align="center">   @Html.ActionLink("Car Seller", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" }) </h1>
                 @if (User.Identity.IsAuthenticated)
                 {
-                    if (HttpContext.Current.User.Identity.Name == "meusingit@gmail.com")
-                    {  <h2 style="color:wheat">Welcome Admin!</h2>}
+                    if (@HttpContext.Current.User.Identity.Name == "meusingit@gmail.com")
+                    {  <h2 style="color:wheat">Welcome Admin!</h2>
+                    @Html.ActionLink("All vehicle details", "Index", "CarInfo1")}
+                    else
+                    {<h3 style="color:wheat">Welcome @HttpContext.Current.User.Identity.Name</h3>
+                   <hr /> @Html.ActionLink("Vehicle Details", "Index", "CarInfo1")}
                 }
+               
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -53,3 +58,4 @@
 
 </body>
 </html>
+

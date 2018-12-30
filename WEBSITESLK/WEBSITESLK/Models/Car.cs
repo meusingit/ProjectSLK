@@ -35,6 +35,7 @@ namespace WEBSITESLK.Models
             modelBuilder.Entity<CarInfo1>()
                 .Property(e => e.Owner)
                 .IsUnicode(false);
+          
         }
     }
 }

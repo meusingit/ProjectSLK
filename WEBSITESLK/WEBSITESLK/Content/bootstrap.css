@@ -27,13 +27,13 @@
   --gray: #868e96;
   --gray-dark: #343a40;
   --primary: #DF691A;
-  --secondary: #4E5D6C;
+  --secondary: #e1e6ea;
   --success: #5cb85c;
   --info: #5bc0de;
   --warning: #f0ad4e;
   --danger: #d9534f;
   --light: #abb6c2;
-  --dark: #4E5D6C;
+  --dark: #e1e6ea;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -221,7 +221,11 @@ img {
 }
 
 svg {
-  overflow: hidden;
+  overflow: 
+      
+      
+      
+      ;
   vertical-align: middle;
 }
 
@@ -1869,7 +1873,7 @@ pre code {
 .table .thead-dark th {
   color: #2B3E50;
   background-color: #abb6c2;
-  border-color: #4E5D6C;
+  border-color: #e1e6ea;
 }
 
 .table .thead-light th {
@@ -2025,7 +2029,7 @@ pre code {
 }
 
 .form-control:disabled, .form-control[readonly] {
-  background-color: #4E5D6C;
+  background-color: #e1e6ea;
   opacity: 1;
 }
 
